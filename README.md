@@ -1,2 +1,2 @@
-# Java-DIO
+# Java-Learning
 My learnings about Java.
