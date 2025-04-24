@@ -4,7 +4,6 @@ public class BankAccount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Asking for user inputs
         System.out.print("Please enter the agency number: ");
         String agency = scanner.nextLine();
 
@@ -17,7 +16,6 @@ public class BankAccount {
         System.out.print("Please enter your initial balance: ");
         double balance = scanner.nextDouble();
 
-        // Final message
         System.out.println("\nHello " + clientName + ", thank you for creating an account with our bank.");
         System.out.println("Your agency number is: " + agency + ", your account number is: " + accountNumber +
                 ", and your balance of $" + balance + " is now available for withdrawal.");
