@@ -14,7 +14,7 @@ public class CarrierPlan {
         break;
       default:
         System.out.println("Invalid Plan.");
-        break;
+        break;  
     }
   }
 }
