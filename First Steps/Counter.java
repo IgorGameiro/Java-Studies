@@ -21,7 +21,6 @@ public class Counter {
     if (firstParameter > secondParameter) {
       throw new InvalidParametersException("The second parameter must be greater than the first.");
     }
-
     int count = secondParameter - firstParameter;
     for (int i = 1; i <= count; i++) {
       System.out.println("Printing number " + i);
