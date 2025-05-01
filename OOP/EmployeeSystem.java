@@ -8,8 +8,8 @@ interface Payable {
 }
 
 abstract class Employee implements Payable {
-    protected String name;
-    protected int age;
+    private final String name;
+    private final int age;
 
     public Employee(String name, int age) {
         this.name = name;
@@ -19,13 +19,13 @@ abstract class Employee implements Payable {
     public abstract String getRole();
 
     public String getDetails() {
-        return name + " (" + getRole() + ")";
+        return String.format("%s (%s, %d years old)", name, getRole(), age);
     }
 }
 
 class Manager extends Employee {
-    private double baseSalary;
-    private double bonus;
+    private final double baseSalary;
+    private final double bonus;
 
     public Manager(String name, int age, double baseSalary, double bonus) {
         super(name, age);
@@ -45,8 +45,8 @@ class Manager extends Employee {
 }
 
 class Developer extends Employee {
-    private double hourlyRate;
-    private int hoursWorked;
+    private final double hourlyRate;
+    private final int hoursWorked;
 
     public Developer(String name, int age, double hourlyRate, int hoursWorked) {
         super(name, age);
@@ -73,8 +73,9 @@ public class EmployeeSystem {
         employees.add(new Developer("Bob", 28, 50, 160));
         employees.add(new Developer("Carol", 32, 60, 150));
 
+        System.out.println("=== Employee Payroll ===");
         for (Employee emp : employees) {
-            System.out.println(emp.getDetails() + " - Salary: $" + emp.calculateSalary());
+            System.out.printf("%s - Salary: $%.2f%n", emp.getDetails(), emp.calculateSalary());
         }
     }
 }
